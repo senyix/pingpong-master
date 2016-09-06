@@ -43,8 +43,8 @@ class Game < ActiveRecord::Base
 		player_1_win = result_of(user_played_games[0].user) == "W" ? 1:0 
     rankings = new_ratings(user_played_games[0].user.ranking, user_played_games[1].user.ranking, player_1_win)
 
-    user_played_games[0].user.update_column :rating, rankings['player1']
-    user_played_games[1].user.update_column :rating, rankings['player2']
+    user_played_games[0].user.update_column :ranking, rankings['player1']
+    user_played_games[1].user.update_column :ranking, rankings['player2']
   end
 
   def new_ratings(player1_rating,player2_rating,result,k_value=32,should_round=true)

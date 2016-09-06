@@ -1,34 +1,24 @@
 <h1 class='page-header'>Leaderboard</h1>
+<table class= "table">
+	<thead>
+		<tr>
+			<th> Rank </th>
+			<th> Name </th>
+			<th> Score </th>
+			<th> Games Played </th>
+		</tr>
+	</thead>
 
-<div class="alert alert-warning" role="alert">This is a sample page.</div>
-
-<%= image_tag('leaderboard.png') %>
-
-<%= image_tag('history.png') %>
-<h1 class='page-header'>History</h1>
-<% if @users.any? %>	
-	<table class= "table">
-		<thead>
+	<tbody>
+		<% @users.each_with_index do |user, index| %>
 			<tr>
-				<th> Rank </th>
-				<th> Name </th>
-				<th> Score </th>
-				<th> Games Played </th>
+				<td><%=index+1%></td>
+				<td><%=user.email%></td>
+				<td><%=user.ranking%></td>
+				<td><%=user.games.count%></td>
 			</tr>
-		</thead>
+		<% end %>
+	</tbody>
+</table>
 
-		<tbody>
-			<% @users.each_with_index do |user, index| %>
-				<tr>
-					<td><%=index+1%></td>
-					<td><%=user.email%></td>
-					<td><%=user.ranking%></td>
-					<td><%=user.games.count%></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
-<% else %>
-	<div class="alert alert-warning" role="alert">Please log a game.</div>
-<% end %>
 
