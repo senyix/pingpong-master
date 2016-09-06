@@ -11,6 +11,12 @@ gem 'turbolinks',   '~> 2.5.3'
 gem 'devise',       '~> 3.5.2'
 gem 'devise-bootstrap-views', '~> 0.0.6'
 
+gem "simple_form"
+gem "rspec-rails", "~> 3.5"
+gem "shoulda-matchers", require: false
+gem "capybara"
+gem "poltergeist"
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

@@ -1,0 +1,5 @@
+en:
+  simple_form:
+    labels:
+      game:
+        opponent_score: "Their Score"

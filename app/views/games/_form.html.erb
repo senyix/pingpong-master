@@ -1,0 +1,22 @@
+<div class="container">
+	<%=simple_form_for @game do |form| %>
+		<% if @game.errors.any? %>
+			<div class="alert alert-warning">
+				<h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:
+				</h2>
+
+				<ul>
+					<% @game.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>	
+				</ul>
+			</div>
+		<% end %>
+		<%=form.input :date_played, input_html: { class: "form-control" },  as: :date %>
+		<%=form.input :opponent_id, collection: current_user.opponents, selected: 1, input_html: { class: "form-control" } %>
+		<%=form.input :my_score, input_html: { class: "form-control" }, as: :string %>
+		<%=form.input :opponent_score, input_html: { class: "form-control" } , as: :string %>
+		<%= form.submit class: "btn btn-default btn-create" %>
+		<%= link_to "Cancel", root_path %>
+	<% end %>
+</div>

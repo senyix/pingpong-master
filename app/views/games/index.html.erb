@@ -1,0 +1,27 @@
+<%= image_tag('history.png') %>
+<h1 class='page-header'>History</h1>
+<% if @games.any? %>	
+	<table class= "table">
+		<thead>
+			<tr>
+				<th> Date </th>
+				<th> Opponent </th>
+				<th> Score </th>
+				<th> Result </th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @games.each do |game| %>
+				<tr>
+					<td><%=game.date_played %></td>
+					<td><%=game.opponent_of(current_user)%></td>
+					<td><%=game.opponent_score_of(current_user)%></td>
+					<td><%=game.result_of(current_user)%> </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% else %>
+	<div class="alert alert-warning" role="alert">Please log a game.</div>
+<% end %>

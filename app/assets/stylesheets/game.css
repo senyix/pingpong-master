@@ -1,0 +1,44 @@
+.btn-create {
+	margin: 30px 20px 0px 0px;
+}
+
+.container {
+
+	margin-top: 25px;
+}
+
+.form-control {
+
+	display: inline-block!important;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 31%!important;
+}
+
+.game_date_played select {
+
+	width: 20%!important;
+}
+
+.game_date_played {
+
+	display: inline-block;
+	width: 50%!important;
+}
+
+
+h1 {
+
+	font-size: 25px!important;
+}
+
+h2 {
+	font-size: 18px!important;
+}
+
+label {
+	
+	margin-right: 5px;
+	width: 15%;
+}
+
